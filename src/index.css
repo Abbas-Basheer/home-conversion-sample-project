@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "SF-Pro-Regular";
+  src: url("../public/fonts/SF-Pro-Text-Regular.otf");
+}
+@font-face {
+  font-family: "SF-Pro-Medium";
+  src: url("../public/fonts/SF-Pro-Text-Medium.otf");
+}
+@font-face {
+  font-family: "SF-Pro-Semibold";
+  src: url("../public/fonts/SF-Pro-Text-Semibold.otf");
+}
+@font-face {
+  font-family: "SF-Pro-Display-Bold";
+  src: url("../public/fonts/SF-Pro-Display-Bold.otf");
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+body {
+  font-family: inter;
+}
+
+.accordion__button:before,
+.accordion__button[aria-expanded="true"]::before,
+.accordion__button[aria-selected="true"]::before {
+  @apply hidden !important;
+}
+.accordion__button[aria-expanded="true"]::after,
+.accordion__button[aria-selected="true"]::after {
+  @apply transform rotate-45;
+}
+/* .accordion__button[aria-expanded="true"] {
+  @apply font-semibold;
+} */
+.accordion__button {
+  @apply relative py-5 pl-0 bg-transparent hover:bg-transparent text-black font-medium text-lg !important;
+}
+.accordion {
+  @apply border-transparent;
+}
+.accordion__panel {
+  @apply text-gray-500 pt-0 pb-4 pl-0 !important;
+}
+
+
+@media only screen and (max-width: 1024px) {
+  .accordion__button {
+    @apply py-4 pl-0 pr-6 !important;
+  }
+}
+
+.accordion__button:after {
+  display: inline-block;
+  content: "";
+  height: 9px;
+  width: 9px;
+  border-bottom: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform: rotate(-45deg);
+  right: -8px;
+  top: 25px;
+  @apply text-gray-400 absolute mr-3;
+}
+.accordion__button {
+  background-color: transparent !important;
+}
+.accordion {
+  border-color: transparent !important;
+}
+.banner-button a {
+  box-shadow: #fe7060 4px 4px 0px 0px;
+}
+
+.special-color {
+  background: linear-gradient(135deg, #B16CEA 33.85%, #FF5E69 55.21%, #FF8A56 78.12%, #FFA84B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.special-color-heading {
+  background: linear-gradient(135deg, #B16CEA 8%, #FF5E69 55.21%, #FF8A56 78.12%, #FFA84B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.dark-button {
+  @apply text-white py-2 px-4 rounded bg-gray-900 hover:bg-gray-800 font-sf_pro_regular;
+}
+.feature-head {
+  @apply font-semibold mb-2 block font-sf_pro_semibold text-xl text-gray-800;
+}
+.feature-description {
+  @apply font-normal font-sf_pro_regular text-sm text-gray-700 leading-5;
+}
+.footer-wrapper {
+  clip-path: polygon(0 115px,100% 0,100% 100%,0 100%);
+}
+.img-rotate {
+  transform: skewY(4deg);
+}
+.footer-menu ul li {
+  @apply mb-3;
+}
+
+.custom-separator {
+  background: #111827;
+  transform: skewY(-5deg);
+  @apply w-full h-full z-0;
+}
+.separator-content {
+  transform: skewY(4.7deg);
+}
+.outer-wrapper {
+  max-width: 1920px;
+  @apply mx-auto;
+}
+
+@media only screen and (max-width:767px) {
+  .custom-separator {
+    transform: skewY(0deg) !important;
+  }
+  .separator-content {
+    transform: skewY(0deg) !important;
+  }
+  .feature-head {
+    @apply mb-0 !important;
+  }
+}
+
