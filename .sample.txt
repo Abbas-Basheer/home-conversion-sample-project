@@ -1,0 +1,1 @@
+This is a sample homepage conversion project based on the Figma mockup provided. 
